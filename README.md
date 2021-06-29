@@ -10,6 +10,7 @@ xxxxxx represents your Rapid API key. If you do not have one, you may join Rapid
 
 #### NOTES
 `$ npm init`
+
 In package.json, under scripts, set up nodemon for development (this will automatically restart your server everytime you make a change to the code) with access point index.js:
 
 `"dev": "nodemon index.js`
@@ -17,3 +18,6 @@ In package.json, under scripts, set up nodemon for development (this will automa
 `$ npm install express`
 
 `$ npm install nodemon --save-dev`
+
+Run server and open http://localhost:3000/ in browser:
+`$ npm run dev`
