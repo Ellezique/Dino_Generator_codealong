@@ -36,12 +36,14 @@ async function getDinoImage() {
 
   //check if image exists, by id, before creating an image.
   if (document.querySelector('#dinoImage') !== null){
+    //if an image exists, remove that image
     document.querySelector('#dinoImage').remove();
   }
-
+  //Now that we have no image, we can create a new image element
   let img = document.createElement('img');
   img.id = 'dinoImage';
   img.src = dinoImageURL;
   img.alt = dinoAlt;
+  //append that newly created image element in the body of the html document
   document.querySelector('body').appendChild(img);
 }
