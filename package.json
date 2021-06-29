@@ -1,0 +1,17 @@
+{
+  "name": "dinosaur_generator",
+  "version": "1.0.0",
+  "description": "This is a codealong from Coder Coder (Jess Chan), called \"Building a Node.js app\". The video tutorial is available online at: https://youtu.be/wYALykLb5oY",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
