@@ -5,6 +5,8 @@ const express = require('express');
 const app = express(); 
 //set port
 const port = 3000;
+//Use fetch function in node
+const fetch = require('node-fetch');
 
 //https://expressjs.com/en/starter/static-files.html
 app.use(express.static('public')); //to serve images, CSS files, and JavaScript files in a directory named public
