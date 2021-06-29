@@ -13,4 +13,23 @@ app.use(express.static('public')); //to serve images, CSS files, and JavaScript 
 //If a browser makes a request to load this local website using port 3000, then it will serve the website
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
-  })
+  });
+
+//Create express route. Client makes http request to server to get information
+//DINOSAUR NAME API 
+app.get('/dinoname', async(request, response) => {
+    //feth returns a javascript promise
+    const fetchApi = await fetch("https://alexnormand-dino-ipsum.p.rapidapi.com/?paragraphs=1&words=2&format=json", {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "340443d564mshafed55be5f3d246p1b6e81jsna1a305994ed9",
+            "x-rapidapi-host": "alexnormand-dino-ipsum.p.rapidapi.com",
+        },
+      }
+    );
+    //promise to JSON format                            
+    const dinoNameResponse = await fetchApi.json();
+    console.log(dinoNameResponse);
+    //set response
+    response.json(dinoNameResponse);
+});             
