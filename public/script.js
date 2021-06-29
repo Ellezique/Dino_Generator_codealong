@@ -30,11 +30,18 @@ async function getDinoImage() {
   //returns random image from array of images:
   let dinoImage = data.value[Math.floor(Math.random() * data.value.length)];
   let dinoImageURL = dinoImage.thumbnailUrl;
-  // let dinoAlt = dinoImage.name;
+  let dinoAlt = dinoImage.name;
   console.log(dinoImage);
 
+
+  //check if image exists, by id, before creating an image.
+  if (document.querySelector('#dinoImage') !== null){
+    document.querySelector('#dinoImage').remove();
+  }
+
   let img = document.createElement('img');
+  img.id = 'dinoImage';
   img.src = dinoImageURL;
-  // img.alt = dinoAlt;
+  img.alt = dinoAlt;
   document.querySelector('body').appendChild(img);
 }
