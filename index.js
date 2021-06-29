@@ -1,3 +1,8 @@
+//dotenv for API keys only during production. 
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
+
 //https://expressjs.com/en/starter/hello-world.html
 //imports express module
 const express = require('express'); 
@@ -17,6 +22,9 @@ app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
   });
 
+//ENV RAPID API KEY variable
+const api_key = process.env.API_KEY
+
 //DINOSAUR NAME API 
 //Create express route. Client makes http request to server to get information
 app.get('/dinoname', async(request, response) => {
@@ -24,7 +32,7 @@ app.get('/dinoname', async(request, response) => {
     const fetchApi = await fetch("https://alexnormand-dino-ipsum.p.rapidapi.com/?paragraphs=1&words=2&format=json", {
         "method": "GET",
         "headers": {
-            "x-rapidapi-key": "340443d564mshafed55be5f3d246p1b6e81jsna1a305994ed9",
+            "x-rapidapi-key": api_key,
             "x-rapidapi-host": "alexnormand-dino-ipsum.p.rapidapi.com"
         }
     });
@@ -39,10 +47,10 @@ app.get('/dinoname', async(request, response) => {
 //Create express route. Client makes http request to server to get information
 app.get('/dinoimage', async(request, response) => {
     //feth returns a javascript promise
-    const fetchApi = await fetch("https://bing-image-search1.p.rapidapi.com/images/search?q=dinosaur&count=10", {
+    const fetchApi = await fetch("https://bing-image-search1.p.rapidapi.com/images/search?q=dinosaur&count=20", {
         "method": "GET",
         "headers": {
-            "x-rapidapi-key": "340443d564mshafed55be5f3d246p1b6e81jsna1a305994ed9",
+            "x-rapidapi-key": api_key,
             "x-rapidapi-host": "bing-image-search1.p.rapidapi.com"
         }
     });
