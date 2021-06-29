@@ -39,7 +39,7 @@ app.get('/dinoname', async(request, response) => {
 //Create express route. Client makes http request to server to get information
 app.get('/dinoimage', async(request, response) => {
     //feth returns a javascript promise
-    const fetchApi = await fetch("https://bing-image-search1.p.rapidapi.com/images/search?q=dinosaur&count=1", {
+    const fetchApi = await fetch("https://bing-image-search1.p.rapidapi.com/images/search?q=dinosaur&count=10", {
         "method": "GET",
         "headers": {
             "x-rapidapi-key": "340443d564mshafed55be5f3d246p1b6e81jsna1a305994ed9",
