@@ -7,6 +7,7 @@ document.querySelector('#btnLoad').addEventListener('click', () => {
 
 getDinoName(); //execute getDinoName function 
 
+//DINO NAME
 //create get request to get data from server. fetch using route created in index.js
 async function getDinoName(){
   const response = await fetch('/dinoname');
